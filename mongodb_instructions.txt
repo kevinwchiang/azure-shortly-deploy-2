@@ -1,0 +1,37 @@
+1. update homebrew
+brew update
+
+2. install mongodb via homebrew
+brew install mongodb
+
+3. add data directory to root with a db folder in it
+mkdir -p /data/db
+
+3.a. if permission denied, run it with sudo
+sudo mkdir -p /data/db
+enter your mac user password
+
+4. try running mongo server
+mongod
+
+4.a. if permission denied, give permission to mongod
+sudo chmod 0755 /data/db
+sudo chown mongod:mongod /data/db
+
+4.b. if 'illegal group name' or similar error, try alternate method (should only need one of these commands)
+sudo chown -R `id -u` /data/db
+sudo chown -R $USER /data/db
+
+4.c. try running mongod again
+mongod
+
+5. run mongo client in a new terminal tab
+mongo
+
+6. see existing databases
+show dbs
+
+7. create + use a database
+use [database name here]
+
+8. high five mongodb in the face for being so annoying to install

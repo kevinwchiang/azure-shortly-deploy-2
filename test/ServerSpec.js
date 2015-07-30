@@ -63,7 +63,7 @@ xdescribe('', function() {
           .expect(function(res) {
             Link.findOne({'url' : 'http://www.roflzoo.com/'})
               .exec(function(err,link){
-                if(err) console.log(err);
+                if(err) {console.log(err);}
                 expect(link.url).to.equal('http://www.roflzoo.com/');
               });
           })
@@ -79,7 +79,7 @@ xdescribe('', function() {
           .expect(function(res) {
             Link.findOne({'url' : 'http://www.roflzoo.com/'})
               .exec(function(err,link){
-                if(err) console.log(err);
+                if(err) {console.log(err);}
                 expect(link.title).to.equal('Rofl Zoo - Daily funny animal pictures');
               });
           })
@@ -96,7 +96,7 @@ xdescribe('', function() {
           title: 'Rofl Zoo - Daily funny animal pictures',
           base_url: 'http://127.0.0.1:4568',
           visits: 0
-        })
+        });
 
         link.save(function() {
           done();
@@ -104,7 +104,7 @@ xdescribe('', function() {
       });
 
       it('Returns the same shortened code if attempted to add the same URL twice', function(done) {
-        var firstCode = link.code
+        var firstCode = link.code;
         request(app)
           .post('/links')
           .send({
@@ -198,7 +198,7 @@ xdescribe('', function() {
           expect(res.headers.location).to.equal('/');
           request(app)
             .get('/logout')
-            .expect(200)
+            .expect(200);
         })
         .end(done);
     });
@@ -239,7 +239,7 @@ xdescribe('', function() {
         .expect(function(res) {
           expect(res.headers.location).to.equal('/login');
         })
-        .end(done)
+        .end(done);
       });
 
   }); // Account Login

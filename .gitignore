@@ -15,3 +15,8 @@ node_modules/
 .floobit
 .floo
 .flooignore
+
+# concatenated js file before minification
+master.js
+
+public/dist/
