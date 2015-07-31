@@ -1,4 +1,18 @@
-var Bookshelf = require('bookshelf');
+var mongoose = require('mongoose');
+
+mongoose.connect('mongodb://localhost/shortly_db');
+
+module.exports = mongoose;
+
+
+
+
+
+
+
+
+
+/*var Bookshelf = require('bookshelf');
 var path = require('path');
 
 var db = Bookshelf.initialize({
@@ -43,3 +57,4 @@ db.knex.schema.hasTable('users').then(function(exists) {
 });
 
 module.exports = db;
+*/
